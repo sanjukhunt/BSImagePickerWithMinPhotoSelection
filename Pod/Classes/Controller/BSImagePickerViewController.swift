@@ -147,7 +147,7 @@ extension BSImagePickerViewController: BSImagePickerSettings {
             return settings.minNumberOfSelections
         }
         set {
-            settings.minNumberOfSelections = 1
+            settings.minNumberOfSelections = newValue
         }
     }
     
