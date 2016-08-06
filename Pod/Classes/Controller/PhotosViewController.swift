@@ -357,6 +357,14 @@ extension PhotosViewController {
             return false
         }
         
+        // Call deselection closure
+        if photosDataSource!.selections.count >= settings.maxNumberOfSelections  {
+            dispatch_async(dispatch_get_global_queue(0, 0), { () -> Void in
+                let asset = PHAsset()
+                self.deselectionClosure!(asset: asset)
+            })
+        }
+        
         return collectionView.userInteractionEnabled && photosDataSource!.selections.count < settings.maxNumberOfSelections
     }
     
