@@ -361,6 +361,7 @@ extension PhotosViewController {
         if photosDataSource!.selections.count >= settings.maxNumberOfSelections  {
             dispatch_async(dispatch_get_global_queue(0, 0), { () -> Void in
                 let asset = PHAsset()
+                asset.accessibilityValue = "extra selection"
                 self.deselectionClosure!(asset: asset)
             })
         }
