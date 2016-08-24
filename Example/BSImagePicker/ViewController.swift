@@ -29,6 +29,10 @@ class ViewController: UIViewController {
     @IBAction func showImagePicker(sender: UIButton) {
         let vc = BSImagePickerViewController()
         vc.maxNumberOfSelections = 6
+        vc.albumButton.tintColor = UIColor.whiteColor()
+        vc.cancelButton.tintColor = UIColor.whiteColor()
+        vc.doneButton.tintColor = UIColor.whiteColor()
+                
         
         bs_presentImagePickerController(vc, animated: true,
             select: { (asset: PHAsset) -> Void in
