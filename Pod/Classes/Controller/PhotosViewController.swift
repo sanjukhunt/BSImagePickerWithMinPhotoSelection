@@ -85,9 +85,11 @@ final class PhotosViewController : UICollectionViewController {
         
         // Setup collection view
        // collectionView?.backgroundColor = UIColor.whiteColor()
+        collectionView?.allowsMultipleSelection = true
+        
+        //changed by me
         collectionView?.showsVerticalScrollIndicator = false
         collectionView?.showsHorizontalScrollIndicator = false
-        collectionView?.allowsMultipleSelection = true
         self.navigationController?.navigationBar.translucent = false
         self.navigationController?.navigationBar.barStyle = .Black
         
